@@ -85,21 +85,14 @@ main {
 .flower-info {
   padding: 12px
 }
-
-#following-section, 
+ 
 #feed-section{
-  border: solid var(--main-outline-color) var(--main-outline-size);
+  display: flex;
+  flex-direction: column;
   height: 90px;
   width: 30%;
   margin-top: calc(var(--header-height) + var(--margin-top));
   background-color: #fff;
-}
-
-#feed-section{
-  border: none;
-  display: flex;
-  flex-direction: column;
-  margin-top: 0;
 }
 
 #search-flowers {
@@ -170,7 +163,6 @@ main {
 
 @media only screen and (max-width: 1440px) {
 
-  #following-section, 
   #feed-section, 
   #discover-container, 
   #search-section{
@@ -180,7 +172,6 @@ main {
 
 @media only screen and (max-width: 1024px) {
 
-  #following-section, 
   #feed-section, 
   #discover-container, 
   #search-section{
@@ -205,7 +196,6 @@ main {
     border: none
   }
 
-  #following-section, 
   #feed-section, 
   #discover-container, 
   #search-section{
@@ -213,8 +203,4 @@ main {
     grid-template-columns: repeat(1, 1fr);
   }
   
-  #following-section{
-    margin-top: var(--header-height) ;
-    border-bottom: solid var(--main-outline-color) var(--main-outline-size)
-  }
 }
