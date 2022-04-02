@@ -1,4 +1,5 @@
 const feedSection = document.getElementById("feed-section");
+const searchSection = document.getElementById("search-section");
 const searchButton = document.getElementById("search-button");
 const form = document.getElementById("flower-search-form");
 
@@ -11,7 +12,7 @@ const feed = async () => {
     const data = await axios.get(flowerURL);
     const flowerResults = data.data.hits;
 
-    for (let i = 0; i < flowerResults.length; i++) {
+    flowerResults.map((flower) => {
       // div to contain each image and info separately
       const flowerDiv = document.createElement("div");
       flowerDiv.classList.add("flower-image-info");
@@ -23,18 +24,18 @@ const feed = async () => {
       flowerDiv.append(userInfoDiv);
 
       const flowerUserImage = document.createElement("img");
-      const userImage = flowerResults[i].userImageURL;
+      const userImage = flower.userImageURL;
       flowerUserImage.setAttribute("src", userImage);
       flowerUserImage.classList.add("user-images");
       userInfoDiv.append(flowerUserImage);
 
       const flowerUserName = document.createElement("p");
-      const username = flowerResults[i].user;
+      const username = flower.user;
       flowerUserName.textContent = username;
       userInfoDiv.append(flowerUserName);
 
       // display images
-      const flowerImageURL = flowerResults[i].largeImageURL;
+      const flowerImageURL = flower.largeImageURL;
       const flowerImageSrc = document.createElement("img");
       flowerImageSrc.setAttribute("src", flowerImageURL);
       flowerImageSrc.classList.add("flower-images");
@@ -50,11 +51,11 @@ const feed = async () => {
 
       flowerInfoDiv.append(flowerLikesParagraph);
 
-      const flowerLikes = flowerResults[i].likes;
-      const views = flowerResults[i].views;
+      const flowerLikes = flower.likes;
+      const views = flower.views;
 
       flowerLikesParagraph.textContent = `❤️ ${flowerLikes}`;
-    }
+    });
   } catch (e) {
     console.error(e);
   }
@@ -65,16 +66,35 @@ const flowerSearch = async () => {
     const input = document.getElementById("search-flowers").value;
     document.getElementById("search-flowers").value = "";
     const flowerSearchURL = `https://pixabay.com/api/?key=26451142-8aba7bc1b6cb6c5ae91066da8&q=flower+${input}&image_type=photo`;
-    const flowerSearchResults = await axios.get(flowerSearchURL);
-    console.log(flowerSearchResults.data.hits);
+    const data = await axios.get(flowerSearchURL);
+    let flowerSearchResults = data.data.hits;
+
+    flowerSearchResults.map((flower) => {
+      // search results div
+      let searchImages = document.createElement("img");
+      searchImages.setAttribute("src", flower.largeImageURL);
+      searchImages.classList.add("search-images");
+      searchSection.append(searchImages);
+    });
   } catch (e) {
     console.error(e);
   }
 };
 
+// Event Listeners
+
 form.addEventListener("submit", (e) => {
   e.preventDefault();
+  removeSearch();
   flowerSearch();
 });
+
+// Functions
+
+const removeSearch = () => {
+  while (searchSection.lastChild) {
+    searchSection.removeChild(searchSection.lastChild);
+  }
+};
 
 feed();

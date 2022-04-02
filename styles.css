@@ -124,11 +124,27 @@ main {
 }
 
 #discover-container {
-  width: 30%;
+  width: 100%;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 10px;
   margin-top: calc(var(--header-height) + var(--margin-top));
+}
+
+/* SEARCH RESULTS */
+
+.search-images {
+  width: 100%;
+  object-fit: cover;
+  aspect-ratio: 1;
+}
+
+#search-section {
+  width: 30%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin-top: var(--margin-top);
 }
 
 /* MEDIA QUERIES */
@@ -137,7 +153,8 @@ main {
 
   #following-section, 
   #feed-section, 
-  #discover-container{
+  #discover-container, 
+  #search-section{
   width: 40em;
 }
 }
@@ -146,7 +163,8 @@ main {
 
   #following-section, 
   #feed-section, 
-  #discover-container{
+  #discover-container, 
+  #search-section{
   width: 37em;
 }
 }
@@ -170,7 +188,8 @@ main {
 
   #following-section, 
   #feed-section, 
-  #discover-container{
+  #discover-container, 
+  #search-section{
     width: 100%;
     grid-template-columns: repeat(1, 1fr);
   }
