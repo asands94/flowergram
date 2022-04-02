@@ -102,8 +102,7 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 0
-  
+  margin-top: 0;
 }
 
 #search-flowers {
@@ -119,16 +118,16 @@ main {
 
 .discover-images {
   width: 100%;
-  /* height:450px; */
-  object-fit: contain;
-  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  aspect-ratio: 1;
 }
 
 #discover-container {
+  width: 30%;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 10px;
-  grid-auto-rows: minmax(100px, auto)
+  margin-top: calc(var(--header-height) + var(--margin-top));
 }
 
 /* MEDIA QUERIES */
@@ -136,7 +135,8 @@ main {
 @media only screen and (max-width: 1440px) {
 
   #following-section, 
-  #feed-section{
+  #feed-section, 
+  #discover-container{
   width: 40em;
 }
 }
@@ -144,7 +144,8 @@ main {
 @media only screen and (max-width: 1024px) {
 
   #following-section, 
-  #feed-section{
+  #feed-section, 
+  #discover-container{
   width: 37em;
 }
 }
@@ -153,6 +154,10 @@ main {
 
   #flower-search-form {
     display:none
+  }
+
+  #discover-container{
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -163,8 +168,10 @@ main {
   }
 
   #following-section, 
-  #feed-section{
-    width: 100%
+  #feed-section, 
+  #discover-container{
+    width: 100%;
+    grid-template-columns: repeat(1, 1fr);
   }
   
   #following-section{
