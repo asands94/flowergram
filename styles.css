@@ -115,6 +115,10 @@ main {
   font-size: 1em;
 }
 
+/* DISCOVER PAGE */
+
+/* MEDIA QUERIES */
+
 @media only screen and (max-width: 1440px) {
 
   #following-section, 
