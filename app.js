@@ -1,3 +1,4 @@
+const main = document.getElementById("main");
 const feedSection = document.getElementById("feed-section");
 const searchSection = document.getElementById("search-section");
 const searchButton = document.getElementById("search-button");
@@ -55,6 +56,64 @@ const feed = async () => {
       const views = flower.views;
 
       flowerLikesParagraph.textContent = `❤️ ${flowerLikes}`;
+
+      // Create modal
+      const modalContent = document.createElement("div");
+      modalContent.classList.add("modal-content");
+      flowerDiv.prepend(modalContent);
+
+      const modalBox = document.createElement("div");
+      modalBox.classList.add("modal-box");
+      modalContent.append(modalBox);
+
+      const closeBtn = document.createElement("span");
+      closeBtn.classList.add("close");
+      closeBtn.textContent = "x";
+      modalBox.append(closeBtn);
+
+      // Display user image and username in modal
+      const modaluserImageURL = flower.userImageURL;
+      const modaluserImageElement = document.createElement("img");
+      modaluserImageElement.setAttribute("src", modaluserImageURL);
+      modaluserImageElement.classList.add("user-images");
+      modalBox.append(modaluserImageElement);
+
+      const modalUsername = flower.user;
+      modalBox.append(modalUsername);
+
+      // // Display synopsis in modal
+      // let synopsisResults = results[i].synopsis;
+      // let synopsis = document.createElement("p");
+      // synopsis.textContent = synopsisResults;
+      // modalBox.append(synopsis)
+
+      // // Display images in modal
+      // let animeImageResults2 = results[i].image_url;
+      // let animeImage2 = document.createElement("img");
+      // animeImage2.setAttribute("src", animeImageResults2);
+      // modalBox.append(animeImage2);
+
+      // // mouseleave event listener
+      // flowerUserImage.addEventListener(
+      //   "mouseleave",
+      //   function (event) {
+      //     // highlight the mouseenter target
+      //     event.target.style.width = "";
+      //   },
+      //   false
+      // );
+
+      flowerUserImage.addEventListener("mouseenter", () => {
+        modalContent.style.display = "block";
+      });
+
+      flowerUserImage.addEventListener("mouseleave", () => {
+        modalContent.style.display = "none";
+      });
+
+      closeBtn.addEventListener("click", () => {
+        modalContent.style.display = "none";
+      });
     });
   } catch (e) {
     console.error(e);

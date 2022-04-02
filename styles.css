@@ -142,6 +142,16 @@ main {
   margin-top: var(--margin-top);
 }
 
+/* MODAL */
+
+.modal-content {
+  display: none
+}
+
+.modal-box {
+  background-color: #fff;
+}
+
 /* MEDIA QUERIES */
 
 @media only screen and (max-width: 1440px) {
