@@ -3,9 +3,9 @@
   --main-outline-size: 1px;
   --margin-top: 1.5em;
   --header-height: 60px;
-  --accent-color-light: #fcfafa;
-  --accent-color-dark: #6b705c;
-  --main-color: #d8e2dc;
+  --accent-color-light: #f9f9f9;
+  --accent-color-font: #f9fff2;
+  --main-color: #a8b2ac;
 }
 /* HEADER */
 
@@ -19,6 +19,7 @@ body {
   flex-direction: column;
   height: 100%;
   overflow-y: scroll;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 header {
@@ -115,8 +116,8 @@ main {
 }
 
 #search-flowers {
-  background-color: var(--main-color);
-  border: none;
+  background-color: var(--accent-color-light);
+  border: solid 1px var(--main-color);
   padding: 10px;
   width: 200px;
   border-radius: 0.5em;
@@ -127,12 +128,12 @@ main {
 
 aside {
   margin: 0 10px;
-  color: var(--accent-color-dark);
+  color: var(--main-color);
   width: 25%;
 }
 
 .aside-links{
-  color: var(--accent-color-light)
+  color: var(--accent-color-font)
 }
 
 /* DISCOVER PAGE */
