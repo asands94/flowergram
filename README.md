@@ -1,9 +1,6 @@
-# flowergram
-
-
 # Project Overview
 
-## Anime+
+## flowergram
 
 [Deployed Project](https://asands94.github.io/AnimePlus/)
 
