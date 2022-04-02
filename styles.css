@@ -35,7 +35,8 @@ header {
 }
 
 h1 {
-  font-size: 1.4em
+  font-size: 1.4em;
+  font-family: 'Licorice', cursive, sans-serif;
 }
 
 .form-label {
