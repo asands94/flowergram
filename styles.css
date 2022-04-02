@@ -83,6 +83,10 @@ main {
   width: 100%;
 }
 
+.flower-info {
+  padding: 12px
+}
+
 #following-section, 
 #feed-section{
   border: solid var(--main-outline-color) var(--main-outline-size);
