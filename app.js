@@ -69,6 +69,11 @@ const flowerSearch = async () => {
     const data = await axios.get(flowerSearchURL);
     let flowerSearchResults = data.data.hits;
 
+    // Show no search results if nothing is typed in
+    if (input.length === 0) {
+      return null;
+    }
+
     flowerSearchResults.map((flower) => {
       // search results div
       let searchImages = document.createElement("img");

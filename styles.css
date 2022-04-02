@@ -124,7 +124,7 @@ main {
 }
 
 #discover-container {
-  width: 100%;
+  width: 30%;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 10px;
