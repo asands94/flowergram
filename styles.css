@@ -1,11 +1,11 @@
 :root {
-  --main-bg-color: rgb(248, 248, 248);
-  --main-outline-color: rgb(217, 217, 217);
+  --main-bg-color: #e8e8e4;
   --main-outline-size: 1px;
   --margin-top: 1.5em;
   --header-height: 60px;
-  --accent-color: blue;
-  --main-color: black;
+  --accent-color-light: #fcfafa;
+  --accent-color-dark: #6b705c;
+  --main-color: #d8e2dc;
 }
 /* HEADER */
 
@@ -25,11 +25,13 @@ header {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  border-bottom: solid var(--main-outline-color) var(--main-outline-size);
+  border-bottom: solid var(--main-color) var(--main-outline-size);
   position: fixed;
   width: 100%;
-  background-color: #fff;
+  background-color: var(--accent-color-light);
   height: var(--header-height);
+  z-index: 1
+
 }
 
 .logo {
@@ -53,7 +55,7 @@ a {
 
 .fas {
   margin: 10px;
-  color: black;
+  color: var(--main-color);
 }
 
 /* MAIN */
@@ -67,15 +69,16 @@ main {
 /* FEED CARD */
 
 .flower-image-info {
-  border: solid var(--main-outline-color) var(--main-outline-size);
+  border: solid var(--main-color) var(--main-outline-size);
   margin-bottom: var(--margin-top);
-  background-color: #fff;
+  background-color: var(--accent-color-light);
 }
 
 .user-info {
   display: flex;
   align-items: center;
   padding: 12px;
+  background-color: var(--accent-color-light);
 }
 
 .user-images {
@@ -93,6 +96,7 @@ main {
 
 .flower-info {
   padding: 12px;
+  background-color: var(--accent-color-light);
 }
 
 #main-section {
@@ -107,11 +111,11 @@ main {
   flex-direction: column;
   height: 90px;
   width: 75%;
-  background-color: #fff;
+  
 }
 
 #search-flowers {
-  background-color: rgb(243, 243, 243);
+  background-color: var(--main-color);
   border: none;
   padding: 10px;
   width: 200px;
@@ -123,8 +127,12 @@ main {
 
 aside {
   margin: 0 10px;
-  color: darkgray;
+  color: var(--accent-color-dark);
   width: 25%;
+}
+
+.aside-links{
+  color: var(--accent-color-light)
 }
 
 /* DISCOVER PAGE */
@@ -140,7 +148,6 @@ aside {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 10px;
-  /* margin-top: calc(var(--header-height) + var(--margin-top)); */
 }
 
 /* SEARCH RESULTS */
@@ -168,11 +175,10 @@ aside {
 }
 
 .modal-box {
-  background-color: rgba(0, 0, 0, 0.066);
+  background-color: var(--main-color);
   height: 100px;
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
   align-items: center;
 }
 
@@ -180,9 +186,8 @@ aside {
   border-radius: 10em;
   width: 3em;
   position: relative;
-  border: solid var(--accent-color);
+  border: solid var(--accent-color-light);
 }
-
 
 /* MEDIA QUERIES */
 
