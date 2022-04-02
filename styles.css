@@ -106,7 +106,7 @@ main {
   background-color: rgb(243, 243, 243);
   border: none;
   padding: 10px;
-  width: 225px;
+  width: 200px;
   border-radius: .5em;
   font-size: 1em;
 }
@@ -115,7 +115,7 @@ main {
 
   #following-section, 
   #feed-section{
-  width: 40%;
+  width: 40em;
 }
 }
 
@@ -123,11 +123,18 @@ main {
 
   #following-section, 
   #feed-section{
-  width: 60%;
+  width: 37em;
 }
 }
 
-@media only screen and (max-width: 425px) {
+@media only screen and (max-width: 640px) {
+
+  #flower-search-form {
+    display:none
+  }
+}
+
+@media only screen and (max-width: 600px) {
   
   .flower-image-info {
     border: none
@@ -142,11 +149,4 @@ main {
     margin-top: var(--header-height) ;
     border-bottom: solid var(--main-outline-color) var(--main-outline-size)
   }
-
-  #flower-search-form {
-    display:none
-  }
-
-  
-
 }
