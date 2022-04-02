@@ -1,0 +1,152 @@
+:root {
+  --main-bg-color: rgb(248, 248, 248);
+  --main-outline-color: rgb(217, 217, 217);
+  --main-outline-size: 1px;
+  --margin-top: 1.5em;
+  --header-height: 60px;
+  --tablet: 768px;
+  --mobile: 425px;
+  --desktop: 2560px
+}
+/* HEADER */
+
+html{
+  height: 100%;
+}
+
+body {
+  background-color: var(--main-bg-color);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow-y: scroll;
+
+}
+
+header {
+  display:flex;
+  justify-content: space-around;
+  align-items: center;
+  border-bottom: solid var(--main-outline-color) var(--main-outline-size);
+  position: fixed;
+  width: 100%;
+  background-color: #fff;
+  height: var(--header-height)
+}
+
+h1 {
+  font-size: 1.4em
+}
+
+.form-label {
+  display: none;
+}
+
+.list-container {
+  display:flex;
+  list-style: none;
+}
+
+.fas {
+  margin: 10px;
+  color: black
+}
+
+/* MAIN */
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* FEED CARD */
+.flower-image-info {
+  border: solid var(--main-outline-color) var(--main-outline-size);
+  margin-top: var(--margin-top);
+  background-color: #fff;
+}
+
+.user-info{
+  display: flex;
+  align-items: center;
+  padding: 12px
+}
+
+.user-images {
+  border-radius: 10em;
+  width: 2em;
+  margin-right: 1em;
+}
+
+.flower-images{
+  width: 100%;
+}
+
+#following-section, 
+#feed-section{
+  border: solid var(--main-outline-color) var(--main-outline-size);
+  height: 90px;
+  width: 30%;
+  margin-top: calc(var(--header-height) + var(--margin-top));
+  background-color: #fff;
+}
+
+#feed-section{
+  background-color: transparent;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 0
+  
+}
+
+#search-flowers {
+  background-color: rgb(243, 243, 243);
+  border: none;
+  padding: 10px;
+  width: 225px;
+  border-radius: .5em;
+  font-size: 1em;
+}
+
+@media only screen and (max-width: 1440px) {
+
+  #following-section, 
+  #feed-section{
+  width: 40%;
+}
+}
+
+@media only screen and (max-width: 1024px) {
+
+  #following-section, 
+  #feed-section{
+  width: 60%;
+}
+}
+
+@media only screen and (max-width: 425px) {
+  
+  .flower-image-info {
+    border: none
+  }
+
+  #following-section, 
+  #feed-section{
+    width: 100%
+  }
+  
+  #following-section{
+    margin-top: var(--header-height) ;
+    border-bottom: solid var(--main-outline-color) var(--main-outline-size)
+  }
+
+  #flower-search-form {
+    display:none
+  }
+
+  
+
+}
