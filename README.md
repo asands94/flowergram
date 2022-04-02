@@ -2,7 +2,7 @@
 
 ## flowergram
 
-[Deployed Project](https://asands94.github.io/AnimePlus/)
+[Deployed Project](https://asands94.github.io/flowergram/)
 
 ## Project Description
 
