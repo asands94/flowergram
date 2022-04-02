@@ -53,7 +53,6 @@ const feed = async () => {
       flowerInfoDiv.append(flowerLikesParagraph);
 
       const flowerLikes = flower.likes;
-      const views = flower.views;
 
       flowerLikesParagraph.textContent = `❤️ ${flowerLikes}`;
 
@@ -75,40 +74,23 @@ const feed = async () => {
       const modaluserImageURL = flower.userImageURL;
       const modaluserImageElement = document.createElement("img");
       modaluserImageElement.setAttribute("src", modaluserImageURL);
-      modaluserImageElement.classList.add("user-images");
+      modaluserImageElement.classList.add("user-images-modal");
       modalBox.append(modaluserImageElement);
 
-      const modalUsername = flower.user;
-      modalBox.append(modalUsername);
-
-      // // Display synopsis in modal
-      // let synopsisResults = results[i].synopsis;
-      // let synopsis = document.createElement("p");
-      // synopsis.textContent = synopsisResults;
-      // modalBox.append(synopsis)
-
-      // // Display images in modal
-      // let animeImageResults2 = results[i].image_url;
-      // let animeImage2 = document.createElement("img");
-      // animeImage2.setAttribute("src", animeImageResults2);
-      // modalBox.append(animeImage2);
-
-      // // mouseleave event listener
-      // flowerUserImage.addEventListener(
-      //   "mouseleave",
-      //   function (event) {
-      //     // highlight the mouseenter target
-      //     event.target.style.width = "";
-      //   },
-      //   false
-      // );
+      const modalUsernameLink = document.createElement("A");
+      modalUsernameLink.setAttribute(
+        "href",
+        `https://pixabay.com/users/${flower.user}-${flower.user_id}/`
+      );
+      modalUsernameLink.textContent = flower.user;
+      modalBox.append(modalUsernameLink);
 
       flowerUserImage.addEventListener("mouseenter", () => {
         modalContent.style.display = "block";
       });
 
-      flowerUserImage.addEventListener("mouseleave", () => {
-        modalContent.style.display = "none";
+      closeBtn.addEventListener("mouseenter", (e) => {
+        e.target.style.cursor = "pointer";
       });
 
       closeBtn.addEventListener("click", () => {
@@ -124,7 +106,7 @@ const flowerSearch = async () => {
   try {
     const input = document.getElementById("search-flowers").value;
     document.getElementById("search-flowers").value = "";
-    const flowerSearchURL = `https://pixabay.com/api/?key=26451142-8aba7bc1b6cb6c5ae91066da8&q=flower+${input}&image_type=photo`;
+    const flowerSearchURL = `https://pixabay.com/api/?key=26451142-8aba7bc1b6cb6c5ae91066da8&q=flower+${input}&safesearch=true&image_type=photo`;
     const data = await axios.get(flowerSearchURL);
     let flowerSearchResults = data.data.hits;
 

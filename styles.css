@@ -4,6 +4,7 @@
   --main-outline-size: 1px;
   --margin-top: 1.5em;
   --header-height: 60px;
+  --accent-color: blue
 }
 /* HEADER */
 
@@ -145,13 +146,26 @@ main {
 /* MODAL */
 
 .modal-content {
-  display: none
+  display: none;
+  z-index: 1;
 }
 
 .modal-box {
-  background-color: #fff;
+  background-color: rgba(0, 0, 0, 0.066);
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
 }
 
+.user-images-modal {
+  border-radius: 10em;
+  width: 3em;
+  position: relative;
+  border: solid var(--accent-color)
+
+}
 /* MEDIA QUERIES */
 
 @media only screen and (max-width: 1440px) {
