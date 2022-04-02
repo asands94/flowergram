@@ -11,6 +11,7 @@ const discover = async () => {
       // display image
       const discoverImages = document.createElement("img");
       discoverImages.setAttribute("src", flowerResults[i].largeImageURL);
+      discoverImages.classList.add("discover-images");
       discoverDiv.append(discoverImages);
     }
   } catch (e) {
