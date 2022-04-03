@@ -2,7 +2,7 @@
 
 ## flowergram
 
-[Deployed Project](https://asands94.github.io/flowergram/)
+[Deployed Project](https://flowergram.netlify.app/)
 
 ## Project Description
 
